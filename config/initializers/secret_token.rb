@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pinderhughes::Application.config.secret_key_base = '676effc10eef519e814f86cc70b40440b29dbcc669c60295678cb0a496cc8558718d34c7e24f8eb1e512f8fce767a5a8c209f4d3b53916d9b6433815c31dfebf'
+Pinderhughes::Application.config.secret_key_base = '3c4b0424c0975d615e19536e14a91f31a2e1857d7357bc8216644755b2a9b1dbdb6bdc2829e8a6e6498eb1b514071b509425096e86681f3bc8b86060c8ed6404'
