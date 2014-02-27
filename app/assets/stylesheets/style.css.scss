@@ -1,10 +1,35 @@
-.main-menu-list{
-  list-style: none;
-    li {
-      text-align: center;
-    }
+#sidebar{
+  // position: fixed;
+  float: left;
+  margin: 0 0 0 0;
 }
 
-.contact-icons{
-  text-align: center;
+ul.main-menu {
+  list-style: none;
+  text-align: center; 
+}
+
+.show-for-small-only ul.main-menu{
+  margin-top: .5em;
+  text-align: center; 
+  font-size: 1.25em;
+  li{
+    display: inline;
+  }
+}
+
+ul.icon-list{
+    margin-top: -1em;
+    text-align: center;
+    li { 
+    font-size: 2em;
+    list-style: none;
+    display: inline;
+  }
+}
+
+#samora-icon img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

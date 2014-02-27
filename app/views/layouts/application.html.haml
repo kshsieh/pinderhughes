@@ -9,6 +9,7 @@
     = csrf_meta_tags 
   %body
     .row.large-2.columns#sidebar= render 'layouts/sidebar'
-    = yield 
-    %p= debug(params) if Rails.env.development?
+    = yield
+    / %p{style: 'border-style: dotted;'}
+    /   = debug(params) if Rails.env.development?
     = javascript_include_tag "application" 

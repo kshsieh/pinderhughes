@@ -1,18 +1,42 @@
 %header
   .nav-bar.vertical
-  %ul.main-menu-list
+  %ul.main-menu.hide-for-small-only
     %li= link_to image_tag('samora.png'), root_path
     %li= link_to "About",    about_path
     %li= link_to "Calendar", calendar_path
     %li= link_to "Listen",   listen_path
     %li= link_to "Watch",    watch_path
     %li= link_to "Contact",  contact_path    
-    %li
-      %a{href: "mailto: samoraabayomi@gmail.com"}
+    %li.icon-list
+      =link_to "mailto: samoraabayomi@gmail.com" do
         %i.fi-mail
-      %a{href: "https://twitter.com/samoraabayomi"}
+      =link_to "https://twitter.com/samoraabayomi" do
         %i.fi-social-twitter
-      %a{href: "http://instagram.com/samoraabayomi"}
+      =link_to "http://instagram.com/samoraabayomi" do
         %i.fi-social-instagram
-      %a{href: "http://samoraabayomi.tumblr.com/"}
+      =link_to "http://samoraabayomi.tumblr.com/" do 
         %i.fi-social-tumblr
+
+  .show-for-small-only
+    #samora-icon
+      = link_to image_tag('samora.png'), root_path
+    %ul.main-menu
+      / %li= link_to image_tag('samora.png'), root_path
+      %li= link_to "About",    about_path
+      %li= link_to "Calendar", calendar_path
+      %li= link_to "Listen",   listen_path
+      %li= link_to "Watch",    watch_path
+      %li= link_to "Contact",  contact_path    
+    %ul.icon-list
+      %li
+        =link_to "mailto: samoraabayomi@gmail.com" do
+          %i.fi-mail
+      %li   
+        =link_to "https://twitter.com/samoraabayomi" do
+          %i.fi-social-twitter
+      %li   
+        =link_to "http://instagram.com/samoraabayomi" do
+          %i.fi-social-instagram
+      %li   
+        =link_to "http://samoraabayomi.tumblr.com/" do 
+          %i.fi-social-tumblr
