@@ -1,0 +1,31 @@
+// #pic{
+//   border-style: dashed;
+// }
+
+// #contact-info{
+//   border-style: dashed; 
+// }
+
+// ABOVE IS JUST FOR VISUAL REFERENCE IN DEV MODE
+
+#pic{
+  background-image: url(samora-piano.png) no-repeat;
+  background-size: cover;
+  float:left;
+  position: relative;
+}
+
+#contact-info{
+  float:left;
+  margin: 7em 0 0 2em;
+}
+
+ul.contact-icons-medium{
+  list-style:none;
+  padding-left: 0;
+  margin-left: 0;
+  li{
+    display: inline;
+    font-size: 3em;
+  }
+}
