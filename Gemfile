@@ -34,6 +34,7 @@ end
 group :development do
   gem 'guard', '~> 2.5.1'
   gem 'guard-livereload', '~>2.1.1', require: false
+  gem "guard-rspec", "~> 4.2.7", require: false
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

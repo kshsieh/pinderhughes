@@ -3,6 +3,7 @@ Pinderhughes::Application.routes.draw do
   root to: 'pages#home'
   
   devise_for :users
+  resources  :users
 
   match '/about',    to: 'pages#about',    via: 'get'
   match '/calendar', to: 'pages#calendar', via: 'get'
