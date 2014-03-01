@@ -1,25 +1,18 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.1.0'
+
 gem 'rails', '4.0.2'
 
-# Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use SCSS for stylesheets
+gem 'haml-rails', '~> 0.5'
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'foundation-rails', '~> 5.1'
+gem 'foundation-icons-sass-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -35,9 +28,19 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
+  gem "debugger", "~> 1.6.5"
 end
 
-gem 'haml-rails', '~> 0.5'
+group :development do
+  gem 'guard', '~> 2.5.1'
+  gem 'guard-livereload', '~>2.1.1', require: false
+  gem "guard-rspec", "~> 4.2.7", require: false
+end
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+gem "devise", "~> 3.2.3"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -48,5 +51,3 @@ gem 'haml-rails', '~> 0.5'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]

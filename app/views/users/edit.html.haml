@@ -1,0 +1,19 @@
+/ password editing handled by devise
+
+<h1 class="row">Update your info</h1>
+
+<div class="row">
+  <%= form_for(@user) do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.submit "Save Update", class: 'button radius' %>
+  <% end %>
+</div>
