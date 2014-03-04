@@ -15,6 +15,25 @@ class SocialMediaSitesController < ApplicationController
     end
   end
 
+  def edit
+    @social_media_site = SocialMediaSite.find(params[:id])
+  end
+
+  def update
+    @social_media_site = SocialMediaSite.find(params[:id])
+    if @social_media_site.update_attributes(social_media_site_params)
+      redirect_to root_path, notice: 'site updated'
+    else 
+      render 'edit', alert: 'update failed, try again'
+    end
+  end
+
+  def destroy
+    @social_media_site = SocialMediaSite.find(params[:id])
+    @social_media_site.destroy
+    redirect_to root_path, notice: 'site destroyed'
+  end
+
   private
     def social_media_site_params
       params.require(:social_media_site).permit(:site_name, :link, :user_id)

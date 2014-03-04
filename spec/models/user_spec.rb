@@ -9,6 +9,4 @@ describe User do
   end
   
   it { should have_many(:social_media_sites) }
-
-  it{ should accept_nested_attributes_for(:social_media_sites)}
 end

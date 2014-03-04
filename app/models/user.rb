@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true       
   validates :email, presence: true
   validates :password, presence: true
 
   has_many :social_media_sites
-
-  accepts_nested_attributes_for :social_media_sites, allow_destroy: true
 end
