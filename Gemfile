@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem "debugger", "~> 1.6.5"
+  gem "shoulda-matchers", "~> 2.5.0"
 end
 
 group :development do

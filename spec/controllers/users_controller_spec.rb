@@ -10,10 +10,21 @@ describe UsersController do
     end
   end
 
+  describe "get#show" do
+    it "returns the requested user" do
+      get :show, id: user.id
+      expect(assigns[:user]).to eq(user)
+    end
+
+    it 'renders show view' do 
+      get :show, id: user.id
+      expect(response).to render_template('show')
+    end
+  end
+
   context 'get#edit' do
     it 'finds the requested user' do
-      get :edit, id: user.id
-      # expect(assigns[:user].id).to eq(user.id) 
+      get :edit, id: user.id 
       expect(assigns[:user]).to eq(user) 
     end
 
