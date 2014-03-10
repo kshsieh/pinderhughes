@@ -1,0 +1,14 @@
+/ password editing handled by devise
+
+%h1.row Update your info
+.row
+  = form_for(@user,:html => { :method => :patch }) do |f|
+    = f.label       :first_name
+    = f.text_field  :first_name
+    = f.label       :last_name
+    = f.text_field  :last_name
+    = f.label       :email
+    = f.email_field :email
+    = f.label       :biography
+    = f.text_field  :biography
+    = f.submit "Save Update", class: 'button radius'

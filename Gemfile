@@ -29,11 +29,15 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem "debugger", "~> 1.6.5"
+  gem "shoulda-matchers", "~> 2.5.0"
 end
 
 group :development do
   gem 'guard', '~> 2.5.1'
   gem 'guard-livereload', '~>2.1.1', require: false
+  gem "guard-rspec", "~> 4.2.7", require: false
+  gem 'spring', '~>1.1'
+  gem "spring-commands-rspec", "~> 1.0.1"
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
