@@ -9,4 +9,5 @@ describe User do
   end
   
   it { should have_many(:social_media_sites) }
+  it { should have_many(:tracks) }
 end

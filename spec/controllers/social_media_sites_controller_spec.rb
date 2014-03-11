@@ -48,23 +48,23 @@ describe SocialMediaSitesController do
     end
   end
 
-  context 'put#update' do
+  context 'patch#update' do
     context 'given valid attributes' do 
       before :all do
         @new_attrs = FactoryGirl.attributes_for(:social_media_site, site_name:'new instagram', link:'www.new-instagram.com')
       end
       it 'finds the requested social_media_site' do
-        get :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:social_media_site)
+        patch :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:social_media_site)
         expect(assigns[:social_media_site]).to eq(social_media_site) 
       end
       it "changes the social_media_site's attributes" do
-        put :update, id: social_media_site.id, social_media_site: @new_attrs
+        patch :update, id: social_media_site.id, social_media_site: @new_attrs
         social_media_site.reload
         expect(social_media_site.site_name).to eq(@new_attrs[:site_name])
         expect(social_media_site.link).to eq(@new_attrs[:link])
       end
       it "redirects to the social_media_site's page" do
-        put :update, id:social_media_site.id, social_media_site: @new_attrs
+        patch :update, id:social_media_site.id, social_media_site: @new_attrs
         social_media_site.reload
         expect(response).to redirect_to root_path
       end
@@ -72,13 +72,13 @@ describe SocialMediaSitesController do
 
     context 'give invalid attributes' do
       it "does not change the social_media_site's attributes" do
-        put :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:invalid_social_media_site)
+        patch :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:invalid_social_media_site)
         social_media_site.reload
         expect(social_media_site.site_name).to eq('Instagram')
         expect(social_media_site.link).to eq('www.instagram.com')
       end
       it "renders edit template" do
-        put :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:invalid_social_media_site)
+        patch :update, id: social_media_site.id, social_media_site: FactoryGirl.attributes_for(:invalid_social_media_site)
         social_media_site.reload
         expect(response).to render_template('edit')
       end

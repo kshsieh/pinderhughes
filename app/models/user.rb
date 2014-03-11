@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   has_many :social_media_sites
+  has_many :tracks
 end
