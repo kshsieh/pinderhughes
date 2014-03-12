@@ -29,8 +29,7 @@ class SocialMediaSitesController < ApplicationController
   end
 
   def destroy
-    @social_media_site = SocialMediaSite.find(params[:id])
-    @social_media_site.destroy
+    SocialMediaSite.find(params[:id]).destroy
     redirect_to root_path, notice: 'site destroyed'
   end
 

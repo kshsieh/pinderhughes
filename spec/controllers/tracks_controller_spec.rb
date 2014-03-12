@@ -96,7 +96,7 @@ describe TracksController do
       it "redirects to the track index page" do
         patch :update, id: track.id, track: @new_attrs
         track.reload
-        expect(response).to redirect_to tracks_path
+        expect(response).to redirect_to listen_path
       end
     end
 
@@ -129,7 +129,7 @@ describe TracksController do
     it "redirects to home page" do 
       track
       delete :destroy, id: track.id
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to listen_path
     end
   end
 end

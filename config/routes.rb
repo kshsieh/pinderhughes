@@ -9,6 +9,7 @@ Pinderhughes::Application.routes.draw do
   
   resources  :social_media_sites
   resources  :tracks
+  resources  :events
     
   match '/about',    to: 'pages#about',    via: 'get'
   match '/calendar', to: 'pages#calendar', via: 'get'

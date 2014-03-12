@@ -25,16 +25,15 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
     if @track.update_attributes(track_params)
-      redirect_to tracks_path, notice: 'track updated'
+      redirect_to listen_path, notice: 'track updated'
     else
       render 'edit', alert: 'updates not saved'
     end
   end
 
   def destroy
-    @track = Track.find(params[:id])
-    @track.destroy
-    redirect_to root_path
+    Track.find(params[:id]).destroy
+    redirect_to listen_path
   end
 
   private
