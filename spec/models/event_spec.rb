@@ -10,5 +10,7 @@ describe Event do
 
   it { should validate_presence_of(:date_time) }
   it { should validate_presence_of(:venue) }
+  it { should validate_presence_of(:user_id) }
+  
   it { should belong_to(:user) }
 end

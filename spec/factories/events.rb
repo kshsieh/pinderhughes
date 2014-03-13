@@ -4,6 +4,7 @@ FactoryGirl.define do
     link          'www.thecaffiends.com'
     venue         'No Future Cafe'
     other_artists 'The Caffiends'
+    sequence(:user_id) { |n| "#{n}"}
   end
 
   factory :invalid_event, parent: :event do 
@@ -11,5 +12,6 @@ FactoryGirl.define do
     link          ''
     venue         ''
     other_artists ''
+    user_id ''
   end
 end

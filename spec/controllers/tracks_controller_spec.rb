@@ -23,7 +23,7 @@ describe TracksController do
       expect(assigns[:track]).to be_kind_of(Track)
     end
 
-    it 'renders index template' do
+    it 'renders new template' do
       get :new
       expect(response).to render_template :new
     end
@@ -41,7 +41,7 @@ describe TracksController do
         expect(Track.last.link).to eq(track[:link])
       end
 
-      it 'renders index template' do
+      it 'redirect to home page' do
         expect(response).to redirect_to root_path
       end
     end

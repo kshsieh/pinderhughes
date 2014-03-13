@@ -14,4 +14,5 @@ class User < ActiveRecord::Base
   has_many :social_media_sites
   has_many :tracks
   has_many :events
+  has_many :videos
 end
