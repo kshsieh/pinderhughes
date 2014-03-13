@@ -2,7 +2,6 @@ class SocialMediaSitesController < ApplicationController
 
   def new
     @social_media_site = SocialMediaSite.new
-
   end
 
   def create
