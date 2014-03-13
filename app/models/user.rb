@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :tracks
   has_many :events
   has_many :videos
+  has_many :blogs
 end

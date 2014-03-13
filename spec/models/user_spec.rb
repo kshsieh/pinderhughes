@@ -16,4 +16,5 @@ describe User do
   it { should have_many(:tracks) }
   it { should have_many(:events) }
   it { should have_many(:videos) }
+  it { should have_many(:blogs) }
 end

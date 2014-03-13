@@ -11,9 +11,9 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.user_id = current_user.id
     if @video.save
-      redirect_to videos_path
+      redirect_to videos_path, notice: 'video link saved'
     else
-      render 'new'
+      render 'new', alert: 'video link not saved'
     end
   end
 
@@ -24,15 +24,15 @@ class VideosController < ApplicationController
   def update
     @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
-      redirect_to videos_path
+      redirect_to videos_path, notice: 'video link updated'
     else
-      render 'edit'
+      render 'edit', alert: 'video link not updated. try again'
     end
   end
 
   def destroy
     Video.find(params[:id]).destroy
-    redirect_to videos_path
+    redirect_to videos_path, notice: 'video link destroyed'
   end
 
   private

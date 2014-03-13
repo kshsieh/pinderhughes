@@ -11,6 +11,7 @@ Pinderhughes::Application.routes.draw do
   resources  :tracks
   resources  :events
   resources  :videos
+  resources  :blogs
     
   match '/about',    to: 'pages#about',    via: 'get'
   match '/calendar', to: 'pages#calendar', via: 'get'

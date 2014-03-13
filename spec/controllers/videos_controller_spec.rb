@@ -22,7 +22,7 @@ describe VideosController do
       expect(assigns[:video]).to be_kind_of(Video)
     end
 
-    it 'renders index template' do
+    it 'renders new template' do
       get :new
       expect(response).to render_template :new
     end
