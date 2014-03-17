@@ -38,6 +38,7 @@ group :development do
   gem "guard-rspec", "~> 4.2.7", require: false
   gem 'spring', '~>1.1'
   gem "spring-commands-rspec", "~> 1.0.1"
+  # gem "better_errors", "~> 1.1.0"
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

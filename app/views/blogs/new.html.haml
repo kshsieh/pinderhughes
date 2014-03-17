@@ -1,0 +1,8 @@
+%h1.row Add a new blog post
+%row 
+  = form_for @blog do |f|
+    = f.label :title
+    = f.text_field :title
+    = f.label :entry
+    = f.text_area :entry
+    = f.submit 'Save', class: 'button radius'
