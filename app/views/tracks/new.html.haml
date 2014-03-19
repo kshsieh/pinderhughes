@@ -1,8 +1,8 @@
 %h1.row Add a new song track
-%row
+.row
   = form_for @track do |f|
-    = f.label :name
+    = f.label      :name
     = f.text_field :name
-    = f.label :link
+    = f.label      :link
     = f.text_field :link
     = f.submit 'Save', class: 'button radius'
