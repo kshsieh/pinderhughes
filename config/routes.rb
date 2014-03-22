@@ -19,6 +19,7 @@ Pinderhughes::Application.routes.draw do
   resources  :videos, only: [:index, :show]
   resources  :blogs, only: [:index, :show]
 
+  get '/admin', to: 'admin/pages#home'
   namespace :admin do
     resources :videos
     resources :blogs
