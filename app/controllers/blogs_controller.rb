@@ -1,11 +1,11 @@
 class BlogsController < ApplicationController
-  before_filter :load_blog, only: :new
-  
+  before_filter :load_blog, only: :show
+
   def index
     @blogs = Blog.all
   end
 
-  def new
+  def show
   end
 
   private
