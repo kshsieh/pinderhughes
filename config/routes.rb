@@ -18,4 +18,9 @@ Pinderhughes::Application.routes.draw do
   resources  :events
   resources  :videos, only: [:index, :show]
   resources  :blogs, only: [:index, :show]
+
+  namespace :admin do
+    resources :videos
+    resources :blogs
+  end
 end
