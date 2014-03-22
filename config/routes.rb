@@ -14,14 +14,17 @@ Pinderhughes::Application.routes.draw do
   end
   
   resources  :social_media_sites 
-  resources  :tracks
-  resources  :events
+  resources  :tracks, only: [:index, :show]
+  resources  :events, only: [:index, :show]
   resources  :videos, only: [:index, :show]
   resources  :blogs, only: [:index, :show]
 
   get '/admin', to: 'admin/pages#home'
   namespace :admin do
-    resources :videos
     resources :blogs
+    resources :events
+    resources :tracks
+    resources :social_media_sites
+    resources :videos
   end
 end
