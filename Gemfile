@@ -5,18 +5,20 @@ gem 'rails', '4.0.2'
 gem 'pg', '~> 0.17.1'
 
 gem 'haml-rails', '~> 0.5'
+
 gem 'foundation-rails', '~> 5.1'
 gem 'foundation-icons-sass-rails'
+
 gem 'turbolinks', '~> 2.2.1'
+
 gem 'jbuilder', '~> 1.2'
+gem 'jquery-rails', '~> 3.1.0'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
 end
-
-gem 'jquery-rails', '~> 3.1.0'
 
 group :production, :staging do
   gem "puma",                               "~> 2.8.1"
@@ -29,7 +31,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sextant', '~> 0.2.4'
   gem 'guard-livereload', '~>2.1.1', require: false
   gem "guard-rspec", "~> 4.2.8", require: false
   gem "better_errors", "~> 1.1.0"
