@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'debugger'
 
 describe TracksController do
   login_user #defined in spec/support.rb
