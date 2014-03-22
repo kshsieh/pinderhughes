@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: pinderhughes_development
+  pool: 5
+  # username: pinderhughes
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: pinderhughes_test
+  pool: 5
+  # username: pinderhughes
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: pinderhughes_production
+  pool: 5
+  # username: pinderhughes
+  password:
