@@ -29,7 +29,6 @@ end
 
 group :development do
   gem 'sextant', '~> 0.2.4'
-  gem 'guard', '~> 2.5.1'
   gem 'guard-livereload', '~>2.1.1', require: false
   gem "guard-rspec", "~> 4.2.8", require: false
   gem "better_errors", "~> 1.1.0"
