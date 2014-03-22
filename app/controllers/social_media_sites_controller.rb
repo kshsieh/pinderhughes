@@ -1,11 +1,11 @@
 class SocialMediaSitesController < ApplicationController
-
+  load_and_authorize_resource
   def new
-    @social_media_site = SocialMediaSite.new
+    # @social_media_site = SocialMediaSite.new
   end
 
   def create
-    @social_media_site = SocialMediaSite.new(social_media_site_params)
+    # @social_media_site = SocialMediaSite.new(social_media_site_params)
     @social_media_site.user_id = current_user.id
     if @social_media_site.save
       redirect_to root_path, notice: 'site added succesfully'
@@ -15,11 +15,11 @@ class SocialMediaSitesController < ApplicationController
   end
 
   def edit
-    @social_media_site = SocialMediaSite.find(params[:id])
+    # @social_media_site = SocialMediaSite.find(params[:id])
   end
 
   def update
-    @social_media_site = SocialMediaSite.find(params[:id])
+    # @social_media_site = SocialMediaSite.find(params[:id])
     if @social_media_site.update_attributes(social_media_site_params)
       redirect_to root_path, notice: 'site updated'
     else 

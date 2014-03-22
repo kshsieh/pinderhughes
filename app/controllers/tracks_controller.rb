@@ -1,15 +1,15 @@
 class TracksController < ApplicationController
-
+  load_and_authorize_resource
   def index
-    @tracks = Track.all
+    # @tracks = Track.all
   end
 
   def new
-    @track = Track.new
+    # @track = Track.new
   end
 
   def create
-    @track = Track.new(track_params)
+    # @track = Track.new(track_params)
     @track.user_id = current_user.id
     if @track.save
       redirect_to root_path, notice: 'track added'
@@ -19,11 +19,11 @@ class TracksController < ApplicationController
   end
 
   def edit
-    @track = Track.find(params[:id])
+    # @track = Track.find(params[:id])
   end
 
   def update
-    @track = Track.find(params[:id])
+    # @track = Track.find(params[:id])
     if @track.update_attributes(track_params)
       redirect_to listen_path, notice: 'track updated'
     else

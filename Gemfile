@@ -45,6 +45,7 @@ end
 # gem 'therubyracer', platforms: :ruby
 
 gem "devise", "~> 3.2.3"
+gem "cancancan", "~> 1.7.1"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

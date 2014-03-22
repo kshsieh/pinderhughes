@@ -8,10 +8,16 @@ class User < ActiveRecord::Base
 #validation is commented out. most likely Devise is handling it      
   # validates :email, presence: true
   # validates :password, presence: true
+  validates :first_name, presence: true
+  validates :last_name,  presence: true 
 
   has_many :social_media_sites
   has_many :tracks
   has_many :events
   has_many :videos
   has_many :blogs
+
+  def admin?
+    admin
+  end
 end

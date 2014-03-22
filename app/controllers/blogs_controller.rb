@@ -1,15 +1,15 @@
 class BlogsController < ApplicationController
-  
+  load_and_authorize_resource  
   def index
-    @blogs = Blog.all
+    # @blogs = Blog.all
   end
 
   def new
-    @blog = Blog.new
+    # @blog = Blog.new
   end
 
   def create
-    @blog = Blog.new(blog_params)
+    # @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: 'blog created'
@@ -19,11 +19,11 @@ class BlogsController < ApplicationController
   end
   
   def edit
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
   end
   
   def update
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
     if @blog.update_attributes(blog_params)
       redirect_to blogs_path, notice: 'update saved'
     else

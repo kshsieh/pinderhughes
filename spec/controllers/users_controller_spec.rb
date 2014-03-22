@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do 
+describe UsersController do
   let(:user){ FactoryGirl.create(:user) }
 
   context 'get#new' do
