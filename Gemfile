@@ -1,58 +1,48 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
-
+ruby '2.1.1'
 gem 'rails', '4.0.2'
-
-gem 'pg'
+gem 'pg', '~> 0.17.1'
 
 gem 'haml-rails', '~> 0.5'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
+
 gem 'foundation-rails', '~> 5.1'
 gem 'foundation-icons-sass-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.2.1'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+gem 'jquery-rails', '~> 3.1.0'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :assets do
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'coffee-rails', '~> 4.0.0'
+end
+
+group :production, :staging do
+  gem "puma",                               "~> 2.8.1"
+  gem 'rails_12factor',                     "~> 0.0.2"
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
-  gem 'factory_girl_rails', '~> 4.0'
-  gem "debugger", "~> 1.6.5"
-  gem "shoulda-matchers", "~> 2.5.0"
+  gem 'thin', '~> 1.6.1'
+  gem 'byebug', '~> 2.7.0'
 end
 
 group :development do
-  gem 'guard', '~> 2.5.1'
   gem 'guard-livereload', '~>2.1.1', require: false
-  gem "guard-rspec", "~> 4.2.7", require: false
-  gem 'spring', '~>1.1'
-  gem "spring-commands-rspec", "~> 1.0.1"
-  # gem "better_errors", "~> 1.1.0"
+  gem "guard-rspec", "~> 4.2.8", require: false
+  gem "better_errors", "~> 1.1.0"
 end
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+group :test do
+  gem "factory_girl_rails",                 "~> 4.4.0"
+  gem 'rspec-rails',                        "~> 2.14.1"
+  gem 'shoulda-matchers',                   "~> 2.5.0"
+  gem 'simplecov',                          '~> 0.7.1'
+end
 
 gem "devise", "~> 3.2.3"
 gem "cancancan", "~> 1.7.1"
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
+gem 'bcrypt', '~> 3.1.7'
