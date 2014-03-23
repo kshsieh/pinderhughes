@@ -1,7 +1,7 @@
 class Admin::VideosController < Admin::BaseController
   
   before_filter :load_videos, only: [:edit, :update]
-  # before_filter :authorize
+  before_filter :authorize
 
   def index
     @videos = Video.all
