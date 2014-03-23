@@ -1,6 +1,8 @@
 class Admin::SocialMediaSitesController < Admin::BaseController
 
   before_filter :load_social_media_sites, only: [:edit, :update]
+  before_filter :authorize
+  
   def index
     @social_media_sites = SocialMediaSite.all
   end

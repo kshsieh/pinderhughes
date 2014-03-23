@@ -1,7 +1,7 @@
 class Admin::TracksController < Admin::BaseController
 
   before_filter :load_track, only: [:edit, :update]
-  # before_filter :authorize
+  before_filter :authorize
   
   def index
     @tracks = Track.all

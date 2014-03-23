@@ -1,7 +1,8 @@
 class Admin::EventsController < Admin::BaseController
 
   before_filter :load_events, only: [:edit, :update]
-
+  before_filter :authorize
+  
   def index
     @events = Event.all
   end
