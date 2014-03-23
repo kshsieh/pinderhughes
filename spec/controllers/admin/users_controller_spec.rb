@@ -1,9 +1,11 @@
 require 'spec_helper'
 
-describe UsersController do
+describe Admin::UsersController do
+  login_user
   let(:user){ FactoryGirl.create(:user) }
 
   context 'get#new' do
+    login_user
     it 'assigns a new User to @user' do
       get :new
       assigns(:user).should be_kind_of(User)
@@ -55,7 +57,7 @@ describe UsersController do
       it "redirects to the user's page" do
         put :update, id: user.id, user: @new_attrs
         user.reload
-        expect(response).to redirect_to User.find(user.id) 
+        expect(response).to redirect_to admin_path
       end
     end
 
