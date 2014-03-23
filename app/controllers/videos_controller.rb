@@ -1,9 +1,10 @@
 class VideosController < ApplicationController
-  load_and_authorize_resource
 
   def index
+    @videos = Video.all
   end
 
-  def new
+  def show
+    @video = Video.find(params[:id])
   end
 end

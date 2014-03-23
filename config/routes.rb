@@ -9,19 +9,20 @@ Pinderhughes::Application.routes.draw do
   match '/contact',  to: 'pages#contact',  via: 'get'
 
   devise_for :users
-  resources  :users do 
-    resources  :social_media_sites
-  end
   
-  resources  :social_media_sites 
-  resources  :tracks
-  resources  :events
-  resources  :videos, only: [:index, :show]
   resources  :blogs, only: [:index, :show]
+  resources  :events, only: [:index, :show]
+  resources  :social_media_sites, only: [:index, :show] 
+  resources  :tracks, only: [:index, :show]
+  resources  :videos, only: [:index, :show]
 
   get '/admin', to: 'admin/pages#home'
   namespace :admin do
-    resources :videos
     resources :blogs
+    resources :events
+    resources :social_media_sites
+    resources :tracks
+    resources :users
+    resources :videos
   end
 end
