@@ -1,1 +1,13 @@
-amdin/events#index
+=link_to 'Add a new event', new_admin_event_path
+
+%ul
+  - @events.each do |event|
+    %li
+      = event.venue
+      = event.date_time.stamp('Jan 1, 2014')
+      = "w/ #{event.other_artists}"
+      = link_to 'Website', "#{event.link}"
+      = link_to 'edit', edit_admin_event_path(event)
+      = link_to 'remove', admin_event_path(event), method: :delete
+
+

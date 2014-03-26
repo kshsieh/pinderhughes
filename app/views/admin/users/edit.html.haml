@@ -1,10 +1,10 @@
 / password editing handled by devise
 
 %h1.row Update your info
-.row
-  = form_for(@user,:html => { :method => :patch }) do |f|
-    = f.label       :email
-    = f.email_field :email
-    = f.label       :biography
-    = f.text_field  :biography
+.row.form
+  = form_for([:admin, @user],:html => { :method => :patch }) do |f|
+    = f.text_field :first_name, placeholder: 'First Name'
+    = f.text_field :last_name, placeholder: 'Last Name'
+    = f.email_field :email, placeholder: 'Email'
+    = f.text_area  :biography, placeholder: 'Bio', rows: 15, cols: 1
     = f.submit "Save Update", class: 'button radius'

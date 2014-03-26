@@ -1,0 +1,6 @@
+%h1.row Update track
+.row
+  = form_for([:admin, @track],:html => { :method => :patch }) do |f|
+    = f.text_field :name, placeholder: 'Song Name'
+    = f.text_field :link, placeholder: 'Soundcloud Link'
+    = f.submit "Save Update", class: 'button radius'

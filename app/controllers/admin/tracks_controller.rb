@@ -15,7 +15,7 @@ class Admin::TracksController < Admin::BaseController
     @track = Track.new(track_params)
     @track.user_id = current_user.id
     if @track.save
-      redirect_to root_path, notice: 'track added'
+      redirect_to admin_tracks_path, notice: 'track added'
     else
       render :new, alert: 'track not saved'
     end
@@ -26,7 +26,7 @@ class Admin::TracksController < Admin::BaseController
 
   def update
     if @track.update_attributes(track_params)
-      redirect_to listen_path, notice: 'track updated'
+      redirect_to admin_tracks_path, notice: 'track updated'
     else
       render 'edit', alert: 'updates not saved'
     end
@@ -34,7 +34,7 @@ class Admin::TracksController < Admin::BaseController
 
   def destroy
     Track.find(params[:id]).destroy
-    redirect_to listen_path
+    redirect_to admin_tracks_path, notice: 'track removed'
   end
 
   private

@@ -1,3 +1,11 @@
-- @tracks.each do |track|
-  %ul
-    %li= render inline: track.link
+=link_to 'Add a new soundcloud track', new_admin_track_path
+
+%ul
+  - @tracks.each do |track|
+    %li
+      = track.name
+      = render inline: track.link
+      = link_to 'edit', edit_admin_track_path(track)
+      = link_to 'remove', admin_track_path(track), method: :delete
+
+

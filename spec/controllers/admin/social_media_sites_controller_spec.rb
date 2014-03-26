@@ -29,6 +29,11 @@ describe Admin::SocialMediaSitesController do
         post :create, social_media_site: social_media_site_attrs
         expect(SocialMediaSite.last.link).to eq(social_media_site_attrs[:link])
       end
+      it 'redirects to social media sites page' do
+        social_media_site_attrs = FactoryGirl.attributes_for(:social_media_site)
+        post :create, social_media_site: social_media_site_attrs
+        expect(response).to redirect_to admin_social_media_sites_path
+      end
     end
 
     context 'given invalid data' do
@@ -77,7 +82,7 @@ describe Admin::SocialMediaSitesController do
       it "redirects to the social_media_site's page" do
         patch :update, id:social_media_site.id, social_media_site: @new_attrs
         social_media_site.reload
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to admin_social_media_sites_path
       end
     end
 
@@ -107,7 +112,7 @@ describe Admin::SocialMediaSitesController do
     end 
     it "redirects to home page" do 
       delete :destroy, id: social_media_site.id
-      response.should redirect_to root_path
+      response.should redirect_to admin_social_media_sites_path
     end
   end
 end

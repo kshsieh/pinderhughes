@@ -1,0 +1,6 @@
+%h1.row Update blog
+.row
+  = form_for([:admin, @blog],:html => { :method => :patch }) do |f|
+    = f.text_field :title, placeholder: 'Title'
+    = f.text_area :entry, placeholder: 'Entry'
+    = f.submit "Save Update", class: 'button radius'

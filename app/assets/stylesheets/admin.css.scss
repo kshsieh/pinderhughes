@@ -1,0 +1,5 @@
+// necessary to override issue in Foundation 
+// that interferes with text_area adjustments
+textarea{
+  height: auto;
+}

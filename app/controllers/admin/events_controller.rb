@@ -15,7 +15,7 @@ class Admin::EventsController < Admin::BaseController
     @event = Event.new(event_params)
     @event.user_id = current_user.id 
     if @event.save
-      redirect_to root_path, notice: 'event created'
+      redirect_to admin_events_path, notice: 'event created'
     else
       render 'new'
     end 
@@ -26,7 +26,7 @@ class Admin::EventsController < Admin::BaseController
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to calendar_path, notice: 'updates saved'
+      redirect_to admin_events_path, notice: 'updates saved'
     else
       render 'edit', alert: 'updates not saved'
     end
@@ -34,7 +34,7 @@ class Admin::EventsController < Admin::BaseController
 
   def destroy
     Event.find(params[:id]).destroy
-    redirect_to calendar_path, notice: 'event removed'
+    redirect_to admin_events_path, notice: 'event removed'
   end
 
   private

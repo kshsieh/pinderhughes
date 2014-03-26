@@ -1,0 +1,8 @@
+%h1.row Update event
+.row
+  = form_for([:admin, @event],:html => { :method => :patch }) do |f|
+    = f.text_field :venue, placeholder: 'Venue'
+    = f.date_time_field :date_time, placeholder: 'Date'
+    = f.text_field :other_artists, placeholder: 'Other Artists'
+    = f.text_field :link, placeholder: 'Website Link'
+    = f.submit "Save Update", class: 'button radius'

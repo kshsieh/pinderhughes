@@ -1,0 +1,15 @@
+/is this necessary? possibly remove
+
+/ TODO: new_user_registration_path only lets you sign up if you are
+/ signed out but can't access the link if unless signed in.
+/ if keeping users#index then fix
+=link_to 'Add an admin', new_user_registration_path
+
+%ul
+  - @users.each do |user|
+    %li
+      = user.first_name
+      = user.last_name
+      = user.email
+      = link_to 'edit', edit_admin_user_path(user)
+      = link_to 'remove', admin_user_path(user), method: :delete

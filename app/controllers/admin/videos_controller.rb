@@ -15,7 +15,7 @@ class Admin::VideosController < Admin::BaseController
     @video = Video.new(video_params)
     @video.user_id = current_user.id
     if @video.save
-      redirect_to videos_path, notice: 'video link saved'
+      redirect_to admin_videos_path, notice: 'video link saved'
     else
       render 'new', alert: 'video link not saved'
     end
@@ -27,7 +27,7 @@ class Admin::VideosController < Admin::BaseController
   def update
     @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
-      redirect_to videos_path, notice: 'video link updated'
+      redirect_to admin_videos_path, notice: 'video link updated'
     else
       render 'edit', alert: 'video link not updated. try again'
     end
@@ -35,7 +35,7 @@ class Admin::VideosController < Admin::BaseController
 
   def destroy
     Video.find(params[:id]).destroy
-    redirect_to videos_path, notice: 'video link destroyed'
+    redirect_to admin_videos_path, notice: 'video link removed'
   end
 
   private

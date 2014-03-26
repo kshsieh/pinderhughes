@@ -40,8 +40,8 @@ describe Admin::TracksController do
         expect(Track.last.link).to eq(track[:link])
       end
 
-      it 'redirect to home page' do
-        expect(response).to redirect_to root_path
+      it 'redirect to admin/tracks page' do
+        expect(response).to redirect_to admin_tracks_path
       end
     end
 
@@ -69,7 +69,6 @@ describe Admin::TracksController do
     end
     it 'finds the requested track' do
       expect(assigns[:track]).to eq(track)
-      # assigns[:track].should eq(track)
     end
 
     it 'renders edit template' do 
@@ -95,7 +94,7 @@ describe Admin::TracksController do
       it "redirects to the track index page" do
         patch :update, id: track.id, track: @new_attrs
         track.reload
-        expect(response).to redirect_to listen_path
+        expect(response).to redirect_to admin_tracks_path
       end
     end
 
@@ -128,7 +127,7 @@ describe Admin::TracksController do
     it "redirects to home page" do 
       track
       delete :destroy, id: track.id
-      expect(response).to redirect_to listen_path
+      expect(response).to redirect_to admin_tracks_path
     end
   end
 end

@@ -1,6 +1,6 @@
 %h1.row Add a new song track
 .row
-  = form_for @track do |f|
+  = form_for [:admin, @track] do |f|
     = f.label      :name
     = f.text_field :name
     = f.label      :link

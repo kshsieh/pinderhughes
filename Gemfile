@@ -34,6 +34,7 @@ group :development do
   gem 'guard-livereload', '~>2.1.1', require: false
   gem "guard-rspec", "~> 4.2.8", require: false
   gem "better_errors", "~> 1.1.0"
+  gem 'binding_of_caller', '~> 0.7.2'
 end
 
 group :test do
@@ -46,3 +47,4 @@ end
 gem "devise", "~> 3.2.3"
 gem "cancancan", "~> 1.7.1"
 gem 'bcrypt', '~> 3.1.7'
+gem 'stamp', '~> 0.5.0'

@@ -15,7 +15,7 @@ class Admin::SocialMediaSitesController < Admin::BaseController
     @social_media_site = SocialMediaSite.new(social_media_site_params)
     @social_media_site.user_id = current_user.id
     if @social_media_site.save
-      redirect_to root_path, notice: 'site added succesfully'
+      redirect_to admin_social_media_sites_path, notice: 'site added succesfully'
     else
       render 'new', alert: 'site not saved. try again.'
     end
@@ -26,7 +26,7 @@ class Admin::SocialMediaSitesController < Admin::BaseController
 
   def update
     if @social_media_site.update_attributes(social_media_site_params)
-      redirect_to root_path, notice: 'site updated'
+      redirect_to admin_social_media_sites_path, notice: 'site updated'
     else 
       render 'edit', alert: 'update failed, try again'
     end
@@ -34,7 +34,7 @@ class Admin::SocialMediaSitesController < Admin::BaseController
 
   def destroy
     SocialMediaSite.find(params[:id]).destroy
-    redirect_to root_path, notice: 'site destroyed'
+    redirect_to admin_social_media_sites_path, notice: 'site removed'
   end
 
   private

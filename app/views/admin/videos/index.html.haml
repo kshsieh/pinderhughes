@@ -1,0 +1,9 @@
+=link_to 'Add a new video', new_admin_video_path
+
+%ul
+  - @videos.each do |video|
+    %li
+      = video.title
+      = render inline: video.link
+      = link_to 'edit', edit_admin_video_path(video)
+      = link_to 'remove', admin_video_path(video), method: :delete

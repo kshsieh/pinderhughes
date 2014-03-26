@@ -1,0 +1,6 @@
+%h1.row Add a new blog
+.row
+  = form_for [:admin, @blog] do |f|
+    = f.text_field :title, placeholder: 'Title'
+    = f.text_area  :entry, placeholder: 'Entry'
+    = f.submit 'Save', class: 'button radius'

@@ -2,6 +2,10 @@ class Admin::UsersController < Admin::BaseController
 
   before_filter :load_users, only: [:show, :edit, :update]
   before_filter :authorize
+
+  def index
+    @users = User.all
+  end
   
   def new
     @user = User.new

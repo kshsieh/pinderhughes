@@ -41,7 +41,7 @@ describe Admin::VideosController do
       end
 
       it 'redirects to video page' do
-        expect(response).to redirect_to videos_path
+        expect(response).to redirect_to admin_videos_path
       end
     end
 
@@ -95,7 +95,7 @@ describe Admin::VideosController do
       it "redirects to the video index page" do
         patch :update, id: video.id, video: @new_attrs
         video.reload
-        expect(response).to redirect_to videos_path
+        expect(response).to redirect_to admin_videos_path
       end
     end
 
@@ -128,7 +128,7 @@ describe Admin::VideosController do
     it "redirects to home page" do 
       video
       delete :destroy, id: video.id
-      expect(response).to redirect_to videos_path
+      expect(response).to redirect_to admin_videos_path
     end
   end
 end

@@ -1,0 +1,8 @@
+=link_to 'Add a new social media site', new_admin_social_media_site_path
+
+%ul
+  - @social_media_sites.each do |sms|
+    %li
+      = link_to "#{sms.site_name}", sms.link
+      = link_to 'edit', edit_admin_social_media_site_path(sms)
+      = link_to 'remove', admin_social_media_site_path(sms), method: :delete

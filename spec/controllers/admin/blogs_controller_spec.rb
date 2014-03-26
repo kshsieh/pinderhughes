@@ -42,7 +42,7 @@ describe Admin::BlogsController do
       end
 
       it 'redirects to blog page' do
-        expect(response).to redirect_to blogs_path
+        expect(response).to redirect_to admin_blogs_path
       end
     end
 
@@ -96,7 +96,7 @@ describe Admin::BlogsController do
       it "redirects to the blog index page" do
         patch :update, id: blog.id, blog: @new_attrs
         blog.reload
-        expect(response).to redirect_to blogs_path
+        expect(response).to redirect_to admin_blogs_path
       end
     end
 
@@ -129,7 +129,7 @@ describe Admin::BlogsController do
     it "redirects to home page" do 
       blog
       delete :destroy, id: blog.id
-      expect(response).to redirect_to blogs_path
+      expect(response).to redirect_to admin_blogs_path
     end
   end
 end

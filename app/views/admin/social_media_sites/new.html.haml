@@ -1,0 +1,8 @@
+%h1.row Add a new social media site
+.row
+  = form_for [:admin, @social_media_site] do |f|
+    = f.text_field :site_name, placeholder: 'Name/Type'
+    = f.text_field :link, placeholder: 'Link'
+    = f.submit 'Save', class: 'button radius'
+
+

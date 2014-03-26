@@ -1,0 +1,6 @@
+%h1.row Update video
+.row
+  = form_for([:admin, @video],:html => { :method => :patch }) do |f|
+    = f.text_field :title, placeholder: 'Title'
+    = f.text_field :link, placeholder: 'Link'
+    = f.submit "Save Update", class: 'button radius'

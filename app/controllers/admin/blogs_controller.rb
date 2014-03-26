@@ -14,7 +14,7 @@ class Admin::BlogsController < Admin::BaseController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     if @blog.save
-      redirect_to blogs_path, notice: 'blog created'
+      redirect_to admin_blogs_path, notice: 'blog created'
     else
       render 'new', alert: 'blog not created, try again.'
     end
@@ -25,7 +25,7 @@ class Admin::BlogsController < Admin::BaseController
   
   def update
     if @blog.update_attributes(blog_params)
-      redirect_to blogs_path, notice: 'update saved'
+      redirect_to admin_blogs_path, notice: 'update saved'
     else
       render 'edit', alert: 'update not saved'
     end
@@ -33,7 +33,7 @@ class Admin::BlogsController < Admin::BaseController
   
   def destroy
     Blog.find(params[:id]).destroy
-    redirect_to blogs_path, notice: 'blog post deleted'
+    redirect_to admin_blogs_path, notice: 'blog post deleted'
   end
 
   private

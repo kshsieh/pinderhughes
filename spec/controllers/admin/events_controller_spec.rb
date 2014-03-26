@@ -41,7 +41,7 @@ describe Admin::EventsController do
       end
 
       it 'renders index template' do
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to admin_events_path
       end
     end
 
@@ -95,7 +95,7 @@ describe Admin::EventsController do
       it "redirects to the event index page" do
         patch :update, id: event.id, event: @new_attrs
         event.reload
-        expect(response).to redirect_to calendar_path
+        expect(response).to redirect_to admin_events_path
       end
     end
 
@@ -128,7 +128,7 @@ describe Admin::EventsController do
     it "redirects to home page" do 
       event
       delete :destroy, id: event.id
-      expect(response).to redirect_to calendar_path
+      expect(response).to redirect_to admin_events_path
     end
   end
 end
