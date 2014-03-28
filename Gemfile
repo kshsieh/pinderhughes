@@ -48,3 +48,4 @@ gem "devise", "~> 3.2.3"
 gem "cancancan", "~> 1.7.1"
 gem 'bcrypt', '~> 3.1.7'
 gem 'stamp', '~> 0.5.0'
+gem 'soundcloud', '~> 0.3.2'
