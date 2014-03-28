@@ -1,11 +1,15 @@
-=link_to 'Add a new soundcloud track', new_admin_track_path
+.row=link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
 
-%ul
+%ul.row
   - @tracks.each do |track|
     %li
-      = track.name
-      = render inline: track.link
+      %h6
+        = track.name
       = link_to 'edit', edit_admin_track_path(track)
       = link_to 'remove', admin_track_path(track), method: :delete
+      %br
+      = render inline: track.link
 
+.row <iframe width="50%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113929332&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
 
+<iframe width="50%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F113929332&amp;color=049cdb&amp;auto_play=false&amp;show_artwork=false"></iframe>

@@ -1,6 +1,6 @@
-=link_to 'Add a new social media site', new_admin_social_media_site_path
+.row=link_to 'Add a new social media site', new_admin_social_media_site_path, class: 'button radius'
 
-%ul
+%ul.row
   - @social_media_sites.each do |sms|
     %li
       = link_to "#{sms.site_name}", sms.link

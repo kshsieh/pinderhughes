@@ -4,7 +4,7 @@ Pinderhughes::Application.routes.draw do
   
   match '/about',    to: 'pages#about',    via: 'get'
   match '/calendar', to: 'pages#calendar', via: 'get'
-  match '/listen',   to: 'pages#listen',   via: 'get'
+  match '/listen',   to: 'tracks#index',   via: 'get'
   match '/watch',    to: 'pages#watch',    via: 'get'
   match '/contact',  to: 'pages#contact',  via: 'get'
 

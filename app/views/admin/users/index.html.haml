@@ -3,9 +3,9 @@
 / TODO: new_user_registration_path only lets you sign up if you are
 / signed out but can't access the link if unless signed in.
 / if keeping users#index then fix
-=link_to 'Add an admin', new_user_registration_path
+.row=link_to 'Add an admin', new_user_registration_path, class: 'button radius'
 
-%ul
+%ul.row
   - @users.each do |user|
     %li
       = user.first_name

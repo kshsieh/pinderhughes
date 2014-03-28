@@ -1,3 +1,6 @@
-- @tracks.each do |track|
-  %ul
-    %li= render inline: track.link
+#pic{style: 'float: left'}
+  = image_tag('samora-transform1.png')
+%ul.no-bullets{style: 'float: left'}
+  - @tracks.each do |track|
+    %li.soundcloud
+      = render inline: track.link

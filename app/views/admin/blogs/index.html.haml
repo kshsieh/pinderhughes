@@ -1,9 +1,10 @@
-=link_to 'Add a new blog entry', new_admin_blog_path
+.row
+  =link_to 'Add a new blog entry', new_admin_blog_path, class: 'button radius'
 
-%ul
+%ul.row
   - @blogs.each do |blog|
     %li
       %h3= blog.title
-      = blog.entry
       = link_to 'edit', edit_admin_blog_path(blog)
       = link_to 'remove', admin_blog_path(blog), method: :delete
+      = blog.entry
