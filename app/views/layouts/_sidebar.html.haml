@@ -7,8 +7,6 @@
     %li= link_to "Listen",   listen_path
     %li= link_to "Watch",    watch_path
     %li= link_to "Contact",  contact_path  
-    - if signed_in? 
-      %li= link_to "Sign Out", destroy_user_session_path, method: :delete
     %li.icon-list
       =link_to "mailto: samoraabayomi@gmail.com" do
         %i.fi-mail
@@ -18,16 +16,6 @@
         %i.fi-social-instagram
       =link_to "http://samoraabayomi.tumblr.com/" do 
         %i.fi-social-tumblr
-  -# - if Rails.env.development?
-    -# %ul.main-menu.hide-for-small-only
-    -#   %li= link_to "Sign Up", new_user_registration_path
-    -#   %li= link_to "Sign In", new_user_session_path
-    -#   %li= link_to "Video", new_video_path
-    -#   %li= link_to "blog", new_blog_path
-    -#   %li= link_to "social_media_sites", new_social_media_site_path
-    -#   %li= link_to "tracks", new_track_path
-    -#   %li= link_to "event", new_event_path
-
   .show-for-small-only
     #samora-icon
       = link_to image_tag('samora.png'), root_path
