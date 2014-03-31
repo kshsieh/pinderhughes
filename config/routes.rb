@@ -2,8 +2,8 @@ Pinderhughes::Application.routes.draw do
 
   root to: 'pages#home'
   
-  match '/about',    to: 'pages#about',    via: 'get'
-  match '/calendar', to: 'pages#calendar', via: 'get'
+  match '/about',    to: 'users#show',    via: 'get'
+  match '/calendar', to: 'events#index', via: 'get'
   match '/listen',   to: 'tracks#index',   via: 'get'
   match '/watch',    to: 'pages#watch',    via: 'get'
   match '/contact',  to: 'pages#contact',  via: 'get'
@@ -14,6 +14,7 @@ Pinderhughes::Application.routes.draw do
   resources  :events, only: [:index, :show]
   resources  :social_media_sites, only: [:index, :show] 
   resources  :tracks, only: [:index, :show]
+  resources  :users, only: [:show]
   resources  :videos, only: [:index, :show]
 
   get '/admin', to: 'admin/pages#home'

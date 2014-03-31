@@ -1,0 +1,8 @@
+#pic= image_tag('samora-pages.png')
+
+%ul
+= @events.each do |event|
+  %li 
+    = "#{event.date_time.stamp("Jan 1st")} at #{event.venue}"
+    = "Other artists: #{event.other_artists}"
+    = link_to "more info", "http://#{event.link}" 

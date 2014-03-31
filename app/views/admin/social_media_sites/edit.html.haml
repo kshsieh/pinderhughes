@@ -1,6 +1,6 @@
 %h1.row Update Social Media Sites
 .row
   = form_for([:admin, @social_media_site],:html => { :method => :patch }) do |f|
-    = f.text_field :site_name, placeholder: 'Name/Type'
+    = f.select :site_name, %w(Name/Type facebook instagram tumblr twitter)
     = f.text_field :link, placeholder: 'Link'
     = f.submit "Save Update", class: 'button radius'
