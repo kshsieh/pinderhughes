@@ -79,5 +79,5 @@ Pinderhughes::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # required by Devise
-  config.action_mailer.default_url_options = { :host => #SET TO PRODUCTION HOST }
+  config.action_mailer.default_url_options = { :host => "evening-sea-8099.heroku.com" }
 end
