@@ -11,6 +11,14 @@ module ApplicationHelper
     track.id
   end
 
+  def youtube_embed(link)
+    link.sub(/(watch\?)/, 'embed/')
+  end
+
+  def youtube_helper(embed_link)
+    raw("<iframe width='420' height='315' src='#{embed_link}' frameborder='0' allowfullscreen></iframe>")
+  end
+
   def sms_helper
     sms = SocialMediaSite.all
   end

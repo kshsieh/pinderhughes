@@ -1,0 +1,7 @@
+%h4 News
+.row
+  %ul.no-bullets
+    - @blogs.each do |blog|
+      %li
+        = blog.title
+        = blog.entry

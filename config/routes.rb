@@ -3,10 +3,11 @@ Pinderhughes::Application.routes.draw do
   root to: 'pages#home'
   
   match '/about',    to: 'users#show',    via: 'get'
-  match '/calendar', to: 'events#index', via: 'get'
-  match '/listen',   to: 'tracks#index',   via: 'get'
-  match '/watch',    to: 'pages#watch',    via: 'get'
-  match '/contact',  to: 'pages#contact',  via: 'get'
+  match '/calendar', to: 'events#index',  via: 'get'
+  match '/listen',   to: 'tracks#index',  via: 'get'
+  match '/watch',    to: 'videos#index',  via: 'get'
+  match '/news',     to: 'blogs#index',   via: 'get'
+  match '/contact',  to: 'pages#contact', via: 'get'
 
   devise_for :users
   

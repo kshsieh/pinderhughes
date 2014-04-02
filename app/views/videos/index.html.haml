@@ -1,1 +1,8 @@
-videos#index
+#pic= image_tag('samora-night.png')
+
+.row
+  %ul.no-bullets
+    - @videos.each do |video|
+      %li
+        - embed_link = youtube_embed(video.link)
+        = youtube_helper(embed_link)
