@@ -11,5 +11,5 @@
   %ul.icon-list
     - sms_helper.each do |sms|
       %li
-        = link_to "http://#{sms.link}" do
+        = link_to "#{sms.link}" do
           = content_tag(:span, "", class: "fi-social-#{sms.site_name}")
