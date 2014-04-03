@@ -22,4 +22,8 @@ module ApplicationHelper
   def sms_helper
     sms = SocialMediaSite.all
   end
+
+  def user_email
+    User.find(1).email
+  end
 end

@@ -9,7 +9,11 @@
     %li= link_to "News",     news_path
     %li= #link_to "Contact",  contact_path  
   %ul.icon-list
+    %li
+      = mail_to user_email do
+        = content_tag(:span, "", class: "fi-mail")
     - sms_helper.each do |sms|
       %li
         = link_to "#{sms.link}" do
           = content_tag(:span, "", class: "fi-social-#{sms.site_name}")
+
