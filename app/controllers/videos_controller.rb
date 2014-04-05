@@ -1,5 +1,4 @@
-class VideosController < ApplicationController
-
+class VideosController < PagesController
   def index
     @videos = Video.all
   end

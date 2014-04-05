@@ -1,4 +1,4 @@
-class SocialMediaSitesController < ApplicationController
+class SocialMediaSitesController < PagesController
   def index
     @social_media_sites = SocialMediaSite.all
   end

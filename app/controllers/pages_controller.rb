@@ -1,19 +1,12 @@
 class PagesController < ApplicationController
+  
+  helper_method :primary_user_email
+
   def home
   end
 
-  def about
-  end
-
-  def calendar
-  end
-
-  def listen
-  end
-
-  def watch
-  end
-
-  def contact
-  end
+  private
+    def primary_user_email
+      User.where(primary: true).first.email
+    end
 end

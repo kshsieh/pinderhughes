@@ -7,15 +7,15 @@ Pinderhughes::Application.routes.draw do
   match '/listen',   to: 'tracks#index',  via: 'get'
   match '/watch',    to: 'videos#index',  via: 'get'
   match '/news',     to: 'blogs#index',   via: 'get'
-  match '/contact',  to: 'pages#contact', via: 'get'
+  # match '/contact',  to: 'pages#contact', via: 'get'
 
   devise_for :users
   
-  resources  :blogs, only: [:index, :show]
+  resources  :blogs,  only: [:index, :show]
   resources  :events, only: [:index, :show]
   resources  :social_media_sites, only: [:index, :show] 
   resources  :tracks, only: [:index, :show]
-  resources  :users, only: [:show]
+  resources  :users,  only: [:show]
   resources  :videos, only: [:index, :show]
 
   get '/admin', to: 'admin/pages#home'

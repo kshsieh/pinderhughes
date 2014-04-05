@@ -2,8 +2,4 @@
   = image_tag('samora-transform1.png')
 
 .row
-  %ul.no-bullets
-    - @tracks.each do |track|
-      %li.soundcloud
-        - id = soundcloud_track_id(track.link)
-        = soundcloud_helper(id)
+  = render partial: 'display_tracks'

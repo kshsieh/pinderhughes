@@ -1,4 +1,4 @@
-class BlogsController < ApplicationController
+class BlogsController < PagesController
   before_filter :load_blog, only: :show
 
   def index

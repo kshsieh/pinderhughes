@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
+class UsersController < PagesController
   def show
-    @user = User.first
+    @user = User.where(primary: true).first
   end
 end
