@@ -1,0 +1,9 @@
+%ul.icon-list
+  %li
+    = mail_to primary_user_email do
+      = content_tag(:span, "", class: "fi-mail")
+  - SocialMediaSite.find_each do |sms|
+    %li
+      = link_to "#{sms.link}" do
+        = content_tag(:span, "", class: "fi-social-#{sms.site_name}")
+
