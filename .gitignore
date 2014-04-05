@@ -19,3 +19,6 @@ config/database.yml
 
 # Ignore application configuration
 /config/application.yml
+
+#old jekyll project that is being converted into rails
+jekyll_prior
