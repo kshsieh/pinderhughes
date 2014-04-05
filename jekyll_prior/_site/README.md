@@ -1,1 +1,0 @@
-Design and Static Pages for pianist Samora Pinderhughes
