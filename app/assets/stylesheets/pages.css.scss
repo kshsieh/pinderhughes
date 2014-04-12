@@ -1,24 +1,19 @@
-// #pic{
-//   border-style: dashed;
-// }
-
-// #contact-info{
-//   border-style: dashed; 
-// }
-
-// ABOVE IS JUST FOR VISUAL REFERENCE IN DEV MODE
-
-#pic{
-  background-image: url(samora-piano.png) no-repeat;
-  background-size: cover;
-  float:left;
-  position: relative;
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
 }
 
-#contact-info{
-  float:left;
-  margin: 7em 0 0 2em;
+.columns{
+  height: 100%;
 }
+
+.nav-bar {
+  overflow: auto;
+  margin-top: 1em;
+}
+
 
 ul.contact-icons-medium{
   list-style:none;
@@ -28,4 +23,8 @@ ul.contact-icons-medium{
     display: inline;
     font-size: 3em;
   }
+}
+
+div.text-center{
+  margin-bottom: 1em;
 }
