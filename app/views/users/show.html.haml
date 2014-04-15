@@ -1,5 +1,6 @@
-#pic= image_tag('samora-piano2.png')
-
-%h4 Pianist | Composer | Arranger
-.row
+#about-pic
+  = image_tag('samora-piano2.png')
+.bio
+  %h4
+    .text-center PIANIST | COMPOSER | ARRANGER
   = simple_format @user.biography

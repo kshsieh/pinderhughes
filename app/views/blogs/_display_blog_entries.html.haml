@@ -1,5 +1,6 @@
 %ul.no-bullets
   - @blogs.each do |blog|
     %li
-      %h4= blog.title
+      %h6#blog-title
+        = blog.title
       = simple_format blog.entry

@@ -1,5 +1,10 @@
 = render 'shared/head'
-%body
-.row.large-2.columns#sidebar= render 'layouts/sidebar'
-= yield
-= javascript_include_tag "application" 
+/ disregard body options, using for Grid Displayer http://alefeuvre.github.io/foundation-grid-displayer/
+%body{"data-grid-color" => "blue", "data-grid-framework" => "f4", "data-grid-gutterwidth" => "30px", "data-grid-nbcols" => "16", "data-grid-opacity" => "0.5", "data-grid-zindex" => "10"}
+  .container
+    .row.fullWidth  
+      .large-2.columns
+        = render 'layouts/sidebar'
+      .large-10.columns
+        = yield
+    = javascript_include_tag "application" 
