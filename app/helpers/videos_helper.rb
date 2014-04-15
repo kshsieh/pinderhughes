@@ -1,5 +1,6 @@
 module VideosHelper
   def youtube_embed(link)
-    link.sub(/(watch\?)/, 'embed/')
+    link.insert(0,'//')
+    link.sub(/(watch\?v=)/, 'embed/')
   end
 end

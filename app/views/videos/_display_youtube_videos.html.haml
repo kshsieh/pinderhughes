@@ -2,6 +2,7 @@
   - @videos.each do |video|
     %li#indiv-video
       - embed_link = youtube_embed(video.link)
-      .flex-video
-        =raw("<iframe width='420' height='315' src=#{embed_link} frameborder='0' allowfullscreen></iframe>")
+      .flex-video    
+        %iframe{allowfullscreen: "", frameborder: "0", height: "315", src:"#{embed_link}", width: "420"}
+    
 
