@@ -1,11 +1,13 @@
-.row=link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
+.row
+  =link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
 
-%ul.row
   - @tracks.each do |track|
-    %li
-      %h6
-        = track.name
-      = link_to 'edit', edit_admin_track_path(track)
-      = link_to 'remove', admin_track_path(track), method: :delete
-      %br
-      = render inline: track.link
+    %h3
+      = track.name
+      %span.has-tip{"data-tooltip" => "", title: "edit"}
+        = link_to edit_admin_track_path(track) do
+          = edit_icon
+      %span.has-tip{"data-tooltip" => "", title: "remove"}    
+        = link_to admin_track_path(track), method: :delete do
+          = trash_icon
+    = render inline: track.link
