@@ -23,8 +23,8 @@ Pinderhughes::Application.configure do
     port: 587,
     domain: ENV["DEV_EMAIL_DOMAIN"],
     authentication: "plain",
-    user_name: ENV["GMAIL_USERNAME"], 
-    password: ENV["GMAIL_LOGIN"],
+    user_name: ENV["DEV_USERNAME"], 
+    password: ENV["DEV_LOGIN"],
     enablestarttls_auto: true
   }
 
