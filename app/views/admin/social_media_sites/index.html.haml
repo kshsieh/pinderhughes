@@ -1,8 +1,11 @@
-.row=link_to 'Add a new social media site', new_admin_social_media_site_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new social media site', new_admin_social_media_site_path, class: 'button radius'
   - @social_media_sites.each do |sms|
-    %li
+    %h3
       = link_to "#{sms.site_name}", sms.link
-      = link_to 'edit', edit_admin_social_media_site_path(sms)
-      = link_to 'remove', admin_social_media_site_path(sms), method: :delete
+      %span.has-tip{"data-tooltip" => "", title: "edit"}
+        = link_to edit_admin_social_media_site_path(sms) do
+          = edit_icon
+      %span.has-tip{"data-tooltip" => "", title: "delete"}
+        = link_to admin_social_media_site_path(sms), method: :delete do
+          = trash_icon

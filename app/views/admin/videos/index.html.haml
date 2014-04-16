@@ -1,10 +1,12 @@
-.row=link_to 'Add a new video', new_admin_video_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new video', new_admin_video_path, class: 'button radius'
   - @videos.each do |video|
-    %li
+    %h3
       = video.title
-      = link_to 'edit', edit_admin_video_path(video)
-      = link_to 'remove', admin_video_path(video), method: :delete
-      %br
-      = render inline: video.link
+      %span.has-tip{"data-tooltip" => "", title: "edit"}
+        = link_to edit_admin_video_path(video) do
+          = edit_icon
+      %span.has-tip{"data-tooltip" => "", title: "delete"}
+        = link_to admin_video_path(video), method: :delete do
+          = trash_icon
+    = render inline: video.link
