@@ -1,7 +1,7 @@
-%h1.row Add a new song event
+%h1.row Add a new event
 .row
   = form_for [:admin, @event] do |f|
-    = f.datetime_field :date_time, placeholder: 'Date/Time (required)'
+    = f.text_field :date_time, placeholder: 'Date (required)'
     = f.text_field :venue, placeholder: 'Venue (required)'
     = f.text_field :other_artists, placeholder: 'Other Artists'
     = f.text_field :link, placeholder: 'Website Link'
