@@ -14,6 +14,8 @@ gem 'turbolinks', '~> 2.2.1'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails', '~> 3.1.0'
 
+gem 'annotate'
+
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
