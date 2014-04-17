@@ -4,10 +4,5 @@
   - @tracks.each do |track|
     %h3
       = track.name
-      %span.has-tip{"data-tooltip" => "", title: "edit"}
-        = link_to edit_admin_track_path(track) do
-          = edit_icon
-      %span.has-tip{"data-tooltip" => "", title: "remove"}    
-        = link_to admin_track_path(track), method: :delete do
-          = trash_icon
+      = render 'shared/index_of_objects', object: track
     = render inline: track.link

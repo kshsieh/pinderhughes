@@ -3,10 +3,5 @@
   - @videos.each do |video|
     %h3
       = video.title
-      %span.has-tip{"data-tooltip" => "", title: "edit"}
-        = link_to edit_admin_video_path(video) do
-          = edit_icon
-      %span.has-tip{"data-tooltip" => "", title: "delete"}
-        = link_to admin_video_path(video), method: :delete do
-          = trash_icon
+      = render 'shared/index_of_objects', object: video
     = render inline: video.link

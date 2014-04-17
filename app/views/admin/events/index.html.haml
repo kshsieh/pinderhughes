@@ -3,13 +3,7 @@
   - @events.each do |event|
     %h3
       = event.date_time.stamp('Jan 1, 2014')
-      %span.has-tip{"data-tooltip" => "", title: "edit"}
-        = link_to edit_admin_event_path(event) do
-          = edit_icon
-      %span.has-tip{"data-tooltip" => "", title: "delete"}
-        = link_to admin_event_path(event), method: :delete do
-          = trash_icon
-
+      = render 'shared/index_of_objects', object: event
     = event.venue
     = "w/ #{event.other_artists}"
     = link_to 'Website', "#{event.link}"

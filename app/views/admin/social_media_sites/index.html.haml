@@ -3,9 +3,4 @@
   - @social_media_sites.each do |sms|
     %h3
       = link_to "#{sms.site_name}", sms.link
-      %span.has-tip{"data-tooltip" => "", title: "edit"}
-        = link_to edit_admin_social_media_site_path(sms) do
-          = edit_icon
-      %span.has-tip{"data-tooltip" => "", title: "delete"}
-        = link_to admin_social_media_site_path(sms), method: :delete do
-          = trash_icon
+      = render 'shared/index_of_objects', object: sms
