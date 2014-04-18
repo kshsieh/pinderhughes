@@ -1,6 +1,5 @@
 .row
   =link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
-
   - @tracks.each do |track|
     %h3
       = track.name

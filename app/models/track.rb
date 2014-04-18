@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: tracks
+#
+#  id         :integer          not null, primary key
+#  link       :string(255)
+#  name       :string(255)
+#  user_id    :integer
+#  created_at :datetime
+#  update_at  :datetime
+#
+
 class Track < ActiveRecord::Base
 
   validates :link, presence: true 
