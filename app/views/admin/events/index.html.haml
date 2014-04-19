@@ -1,13 +1,11 @@
-.row=link_to 'Add a new event', new_admin_event_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new event', new_admin_event_path, class: 'button radius'
   - @events.each do |event|
-    %li
-      = event.venue
+    %h3
       = event.date_time.stamp('Jan 1, 2014')
-      = "w/ #{event.other_artists}"
-      = link_to 'Website', "#{event.link}"
-      = link_to 'edit', edit_admin_event_path(event)
-      = link_to 'remove', admin_event_path(event), method: :delete
+      = render 'shared/index_of_objects', object: event
+    = event.venue
+    = "w/ #{event.other_artists}"
+    = link_to 'Website', "#{event.link}"
 
 

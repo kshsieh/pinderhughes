@@ -17,7 +17,7 @@ class Admin::EventsController < Admin::BaseController
     if @event.save
       redirect_to admin_events_path, notice: 'event created'
     else
-      render 'new'
+      render 'new', alert: 'not saved. try again'
     end 
   end
 

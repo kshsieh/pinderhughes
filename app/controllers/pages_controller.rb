@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   helper_method :primary_user_email
 
   def home

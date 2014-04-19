@@ -1,11 +1,7 @@
-.row=link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new soundcloud track', new_admin_track_path, class: 'button radius'
   - @tracks.each do |track|
-    %li
-      %h6
-        = track.name
-      = link_to 'edit', edit_admin_track_path(track)
-      = link_to 'remove', admin_track_path(track), method: :delete
-      %br
-      = render inline: track.link
+    %h3
+      = track.name
+      = render 'shared/index_of_objects', object: track
+    = render inline: track.link
