@@ -1,0 +1,6 @@
+%span.has-tip{"data-tooltip" => "", title: "edit"}
+  = link_to edit_polymorphic_path([:admin, object]) do
+    = edit_icon
+%span.has-tip{"data-tooltip" => "", title: "delete"}
+  = link_to polymorphic_path([:admin, object]), method: :delete do
+    = trash_icon

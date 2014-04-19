@@ -1,7 +1,6 @@
-#sidebar{
-  // position: fixed;
-  float: left;
-  margin: 0 0 0 0;
+a:hover {
+  color: #000;
+  background-color: #ffffff;
 }
 
 ul.main-menu {
@@ -36,4 +35,13 @@ ul.icon-list{
 
 .no-bullets{
   list-style: none;
+}
+
+.button{
+  background-color: #570B0B;
+  // color: #009933;
+}
+
+.button:hover {
+  background-color: #B51F1F;
 }

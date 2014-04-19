@@ -1,8 +1,6 @@
-.row=link_to 'Add a new social media site', new_admin_social_media_site_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new social media site', new_admin_social_media_site_path, class: 'button radius'
   - @social_media_sites.each do |sms|
-    %li
+    %h3
       = link_to "#{sms.site_name}", sms.link
-      = link_to 'edit', edit_admin_social_media_site_path(sms)
-      = link_to 'remove', admin_social_media_site_path(sms), method: :delete
+      = render 'shared/index_of_objects', object: sms

@@ -1,10 +1,7 @@
-.row=link_to 'Add a new video', new_admin_video_path, class: 'button radius'
-
-%ul.row
+.row
+  =link_to 'Add a new video', new_admin_video_path, class: 'button radius'
   - @videos.each do |video|
-    %li
+    %h3
       = video.title
-      = link_to 'edit', edit_admin_video_path(video)
-      = link_to 'remove', admin_video_path(video), method: :delete
-      %br
-      = render inline: video.link
+      = render 'shared/index_of_objects', object: video
+    = render inline: video.link
