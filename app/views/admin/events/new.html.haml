@@ -1,6 +1,14 @@
 %h1.row Add a new event
 .row
   = form_for [:admin, @event] do |f|
+    .errors
+      - if @event.errors.any?
+        %h4
+          = pluralize(@event.errors.count, "error")
+          prohibited this event from being saved:
+        %ul.no-bullet
+          - @event.errors.full_messages.each do |msg|
+            %li= msg
     = f.text_field :date_time, placeholder: 'Date (required)'
     = f.text_field :venue, placeholder: 'Venue (required)'
     = f.text_field :other_artists, placeholder: 'Other Artists'
