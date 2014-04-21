@@ -1,6 +1,8 @@
-#event-pic
-  = image_tag('samora-pages.png')
-.events
-  %h4
-    .text-center CALENDER
-  = render partial: 'display_events'
+.large-6.columns
+  #pic
+    = image_tag('samora-pages.png')
+.large-6.columns
+  .events#content
+    %h4
+      .text-center CALENDER
+    = render partial: 'display_events'

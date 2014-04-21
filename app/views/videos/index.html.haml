@@ -1,8 +1,9 @@
-#video-pic
-  = image_tag('samora-night.png')
-
-.videos
-  %h4
-    .text-center WATCH
-  =render partial: 'display_youtube_videos'
-     
+.large-6.columns
+  #pic
+    = image_tag('samora-night.png')
+.large-6.columns
+  .videos#content
+    %h4
+      .text-center WATCH
+    =render partial: 'display_youtube_videos'
+       
