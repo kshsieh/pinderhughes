@@ -1,6 +1,11 @@
-a:hover {
+a{
+  &:visited {
+    color: transparent;
+  }
+  &:hover {
   color: #000;
-  background-color: #ffffff;
+  background-color: transparent;
+  }
 }
 
 ul.main-menu {
@@ -39,9 +44,15 @@ ul.icon-list{
 
 .button{
   background-color: #570B0B;
-  // color: #009933;
+  &:visited {
+    color: #fff !important;
+  }
 }
 
 .button:hover {
   background-color: #B51F1F;
+}
+
+.errors{
+  color: red;
 }

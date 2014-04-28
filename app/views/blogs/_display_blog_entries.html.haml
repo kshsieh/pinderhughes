@@ -3,4 +3,5 @@
     %li
       %h6#blog-title
         = blog.title
+      = blog.created_at.stamp("January 1, 2014")
       = simple_format blog.entry

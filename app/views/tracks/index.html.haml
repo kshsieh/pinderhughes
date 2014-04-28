@@ -1,6 +1,8 @@
-#listen-pic
-  = image_tag('samora-transform1.png')
-.tracks
-  %h4
-    .text-center LISTEN
-  = render partial: 'display_tracks'
+.large-6.columns
+  #pic
+    = image_tag('samora-transform1.png')
+.large-6.columns  
+  .tracks#content
+    %h4
+      .text-center LISTEN
+    = render partial: 'display_tracks'
